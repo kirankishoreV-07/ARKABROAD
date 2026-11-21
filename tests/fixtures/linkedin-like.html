@@ -1,0 +1,49 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Hari vaarthan T.D | LinkedIn</title>
+<style>body{font-family:Arial;width:900px;margin:0 auto} .tall{height:900px;border:1px solid #ddd;margin:8px 0} .card{border:1px solid #ccc;padding:12px;margin:8px 0}</style></head>
+<body>
+<!-- Layout B: divs + p, no <section>/<li>, sections lazy-loaded only when scrolled near (like LinkedIn) -->
+<main>
+  <div class="card" id="top">
+    <h1>Hari vaarthan T.D</h1>
+    <p>AI &amp; Cloud Developer | AWS Serverless | Python | LLMs | B.Tech AI @ Amrita | Open to Internships</p>
+    <p>Coimbatore, Tamil Nadu, India</p>
+    <span>· 1st</span>
+    <p>Kiran, Arun and 81 other mutual connections</p>
+    <button>Message</button>
+  </div>
+  <div class="card"><div><span>About</span></div><p>I build serverless AI apps on AWS and love working with LLMs, Python and cloud automation for real users.</p></div>
+  <div class="card"><div><span>Activity</span></div>
+    <div><p>Hari vaarthan T.D</p><p>2w •</p><p>Excited to share that I have completed my AI Developer Internship and received my certificate. Thanks to the whole team!</p></div>
+  </div>
+  <div class="tall">featured / images</div>
+  <div class="tall">more activity</div>
+  <div class="tall">more activity</div>
+  <div id="lazy" style="height:20px"></div>
+</main>
+<aside><p>Past colleague from Latlon Technologies Pvt. Ltd.</p></aside>
+<script>
+  // Like LinkedIn: the lower sections are only built when their placeholder comes near the screen.
+  // (A scroll check is used instead of IntersectionObserver, which does not fire in a hidden test pane.)
+  let built = false;
+  setInterval(() => {   // polled, so it also works while the test pane is hidden
+    const lazy = document.getElementById('lazy');
+    if (built || lazy.getBoundingClientRect().top > window.innerHeight + 200) return;
+    built = true;
+    setTimeout(() => {
+      document.getElementById('lazy').innerHTML = `
+        <div class="card"><div><h2>Experience</h2></div>
+          <div><p>Cloud intern</p><p>SkyLena Info Technology Pvt. Ltd · Internship</p><p>Apr 2026 - May 2026 · 2 mos</p><p>Coimbatore, Tamil Nadu, India · On-site</p></div>
+        </div>
+        <div class="card"><div><h2>Education</h2></div>
+          <div><p>Amrita Vishwa Vidyapeetham</p><p>B.Tech, Computer science with artificial intelligence</p><p>Aug 2023 – Aug 2027</p></div>
+          <div><p>Sri Chaitanya College of Education</p><p>Apr 2019 – Mar 2023</p></div>
+        </div>
+        <div class="card"><div><h2>Skills</h2></div>
+          <div><p>Amazon Web Services (AWS)</p><p>Python (Programming Language)</p><p>Large Language Models (LLM)</p><p>Show all 12 skills</p></div>
+        </div>`;
+    }, 300);
+  }, 100);
+</script>
+<script>window.chrome = { runtime: { onMessage: { addListener() {} } } };</script>
+<script src="../../linkedin%20extention/content_script.js"></script>
+</body></html>
