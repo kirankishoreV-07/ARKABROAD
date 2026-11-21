@@ -1,0 +1,60 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Demo Alum | LinkedIn</title>
+<style>body{font-family:Arial;width:900px;margin:0 auto} section{border:1px solid #ccc;padding:12px;margin:8px 0;min-height:40px} .tall{height:900px}</style></head>
+<body>
+<!-- Layout C (Nov 2026): hashed-class divs, <h2> headings nested in divs, empty <section> shells that LinkedIn fills
+     only after the shell has been on screen for ~0.6 s. First job is NOT a list item; grouped roles are <li>
+     without the company name; no Skills section (skills are listed under each job); education has no <li>. -->
+<main>
+  <section class="x1"><div><div>
+    <h2>Demo Alum</h2><p>· 3rd</p>
+    <p>Data Platform Engineer at Allianz Australia</p>
+    <p>Melbourne, Victoria, Australia</p>
+    <button aria-label="Education: Amrita Vishwa Vidyapeetham">Amrita Vishwa Vidyapeetham</button>
+    <p>397 connections</p><button>Message</button>
+  </div></div></section>
+  <section class="x2"><div><h2>About</h2><p>Data engineer who turns raw feeds into governed, reliable data platforms.</p></div></section>
+  <section class="x2"><div><h2>Activity</h2><p>401 followers</p></div></section>
+  <div class="tall"></div>
+  <section class="x2 shell" data-fill="experience"></section>
+  <div class="tall"></div>
+  <section class="x2 shell" data-fill="education"></section>
+  <section class="x2 shell" data-fill="ad"></section>
+  <div class="tall"></div>
+</main>
+<template id="experience"><div><div><div><h2>Experience</h2></div><div>
+  <div><div><a href="/company/1/"><p>Data Platform Engineer</p></a><p>Allianz Australia · Contract</p><p>Aug 2026 - Present · 4 mos</p><span>Present</span><p>Melbourne, Victoria, Australia · Hybrid</p><p>Databricks, PySpark and +11 skills</p></div></div>
+  <div><div><a href="/company/2/"><p>Tata Consultancy Services</p></a><p>8 yrs 1 mo</p></div>
+    <ul>
+      <li><div><p>Senior Data Engineer</p><p>Full-time</p><p>Aug 2022 - Present · 4 yrs 4 mos</p><p>Melbourne, Victoria, Australia · Hybrid</p><span>Present</span><p>Data Engineering, Data Architecture and +4 skills</p></div></li>
+      <li><div><p>Data Engineer</p><p>Full-time</p><p>Nov 2018 - Present · 8 yrs 1 mo</p><span>Present</span><p>Amazon Redshift, Data Engineering and +10 skills</p></div></li>
+      <li><div><p>Big Data Developer</p><p>Nov 2018 - Aug 2022 · 3 yrs 10 mos</p></div></li>
+    </ul></div>
+  <div><div><p>Data Engineer</p><p>NAB · Contract</p><p>Aug 2022 - Jul 2026 · 4 yrs</p><p>Python (Programming Language), Databricks Products and +10 skills</p></div></div>
+  <div><div><a href="/company/3/"><p>Cognizant</p></a><p>5 yrs 11 mos</p></div>
+    <ul>
+      <li><div><p>Senior ETL Developer</p><p>Dec 2014 - Nov 2018 · 4 yrs</p></div></li>
+      <li><div><p>Associate</p><p>2013 – Nov 2018</p><p>Troubleshooting, Data Modeling and +2 skills</p></div></li>
+      <li><div><p>Data Warehouse Engineer</p><p>Mar 2013 - Nov 2014 · 1 yr 9 mos</p></div></li>
+    </ul></div>
+</div></div></div></template>
+<template id="education"><div><div><div><h2>Education</h2></div>
+  <div><a href="/school/1/"><img alt=""></a><a href="/school/1/"><p>Amrita Vishwa Vidyapeetham</p></a><p>Bachelor of Technology, Mechanical Engineering</p><p>2008 – 2012</p><p>GPA: 8.2</p></div>
+  <div><a href="/school/1/"><img alt=""></a><a href="/school/1/"><p>Amrita Vishwa Vidyapeetham</p></a><p>Bachelor of Technology - BTech</p></div>
+  <a href="/in/demo-alum/details/education/"><span>Show all 3 educations</span></a>
+</div></div></template>
+<script>
+  // Fill a shell only after it has stayed on screen for 600 ms (polled, so it also works in a hidden pane).
+  const seen = new Map();
+  setInterval(() => {
+    document.querySelectorAll('section.shell:empty').forEach(sec => {
+      const r = sec.getBoundingClientRect();
+      const onScreen = r.top < window.innerHeight && r.bottom > 0;
+      if (!onScreen) { seen.delete(sec); return; }
+      if (!seen.has(sec)) seen.set(sec, Date.now());
+      if (Date.now() - seen.get(sec) >= 600 && sec.dataset.fill !== 'ad') sec.innerHTML = document.getElementById(sec.dataset.fill).innerHTML;
+    });
+  }, 100);
+</script>
+<script>window.chrome = { runtime: { onMessage: { addListener() {} } } };</script>
+<script src="../../linkedin%20extention/content_script.js"></script>
+</body></html>
