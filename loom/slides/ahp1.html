@@ -1,0 +1,28 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="base.css"><link rel="stylesheet" href="ahp.css"></head><body><div class="wrap" style="padding:80px 110px 70px">
+<div class="kicker">How the score works · AHP (Analytic Hierarchy Process)</div>
+<h1 style="font-size:72px;margin-top:16px">The coach decides <em>what matters</em>.<br>AHP turns it into weights.</h1>
+<div class="grid3">
+ <div class="panel"><div class="step">STEP 1</div><h3>Four factors,<br>0–10 each</h3>
+  <div class="factor"><div>Role fit<small>Do they do my target role?</small></div><span class="pill">0–10</span></div>
+  <div class="factor"><div>Shared ground<small>School, migrant path, company, skills</small></div><span class="pill">0–10</span></div>
+  <div class="factor"><div>Reachability<small>1st / 2nd / 3rd degree, mutuals</small></div><span class="pill">0–10</span></div>
+  <div class="factor"><div>Timing<small>Recent post, hiring news</small></div><span class="pill">0–10</span></div>
+ </div>
+ <div class="panel"><div class="step">STEP 2</div><h3>Compare two at a time: 6 questions</h3>
+  <div class="q">“Is <b>role fit</b> more important than <b>shared ground</b>, and by how much?” → <b>a bit more (2×)</b></div>
+  <table class="m"><tr><th class="r"></th><th>Role</th><th>Shared</th><th>Reach</th><th>Timing</th><th>Geo-mean</th></tr>
+   <tr><td class="r">Role fit</td><td class="one">1</td><td>2</td><td>3</td><td>4</td><td class="gm">2.21</td></tr>
+   <tr><td class="r">Shared</td><td>½</td><td class="one">1</td><td>2</td><td>3</td><td class="gm">1.32</td></tr>
+   <tr><td class="r">Reach</td><td>⅓</td><td>½</td><td class="one">1</td><td>2</td><td class="gm">0.76</td></tr>
+   <tr><td class="r">Timing</td><td>¼</td><td>⅓</td><td>½</td><td class="one">1</td><td class="gm">0.45</td></tr></table>
+  <div class="note">Weight = each row's geometric mean ÷ their total (geometric mean avoids rank reversal)</div>
+ </div>
+ <div class="panel"><div class="step">STEP 3</div><h3>Weights + a<br>consistency check</h3>
+  <div class="bar"><div class="lbl"><span>Role fit</span><b>46.7%</b></div><div class="track"><div class="fill" style="width:46.7%"></div></div></div>
+  <div class="bar"><div class="lbl"><span>Shared ground</span><b>27.8%</b></div><div class="track"><div class="fill" style="width:27.8%"></div></div></div>
+  <div class="bar"><div class="lbl"><span>Reachability</span><b>16.0%</b></div><div class="track"><div class="fill" style="width:16.0%"></div></div></div>
+  <div class="bar"><div class="lbl"><span>Timing</span><b>9.5%</b></div><div class="track"><div class="fill" style="width:9.5%"></div></div></div>
+  <div class="cr">Consistency ratio <b>0.011</b><br>under 0.10 = answers don't contradict each other</div>
+ </div>
+</div>
+</div></body></html>

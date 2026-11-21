@@ -1,0 +1,43 @@
+.grid3{display:grid;grid-template-columns:1fr 1.25fr 1fr;gap:28px;margin-top:44px;flex:1;min-height:0}
+.panel{background:#FFFCF7;border-radius:26px;padding:34px 36px;box-shadow:0 10px 30px rgba(60,40,20,.08);display:flex;flex-direction:column}
+.step{font-size:20px;font-weight:800;letter-spacing:.14em;color:#2F51D6;margin-bottom:10px}
+.panel h3{font-size:32px;line-height:1.15;margin-bottom:22px;letter-spacing:-.01em}
+.factor{display:flex;justify-content:space-between;align-items:center;padding:16px 0;border-bottom:1px solid #EDE4D8;font-size:27px}
+.factor:last-child{border-bottom:0}
+.factor small{display:block;font-size:19px;color:#7A6F62;margin-top:3px}
+.pill{font-size:21px;font-weight:700;background:#F3ECE2;border-radius:999px;padding:6px 14px;color:#4A4238;white-space:nowrap}
+.q{background:#EEF2FF;border-radius:18px;padding:18px 22px;font-size:24px;line-height:1.35;color:#1E2E7A;margin-bottom:22px}
+.q b{color:#2F51D6}
+table.m{border-collapse:collapse;width:100%;font-size:23px;font-variant-numeric:tabular-nums}
+table.m th{font-size:18px;color:#7A6F62;font-weight:700;padding:8px 6px;text-align:center}
+table.m th.r{text-align:left}
+table.m td{padding:10px 6px;text-align:center;border-top:1px solid #EDE4D8}
+table.m td.r{text-align:left;font-weight:650}
+table.m td.one{color:#B4AA9C}
+table.m td.gm{font-weight:800;color:#2F51D6}
+.note{font-size:19px;color:#7A6F62;margin-top:auto;padding-top:14px;line-height:1.4}
+.bar{margin:12px 0 18px}
+.bar .lbl{display:flex;justify-content:space-between;font-size:26px;margin-bottom:8px}
+.bar .lbl b{font-variant-numeric:tabular-nums}
+.bar .track{height:16px;background:#EDE4D8;border-radius:99px;overflow:hidden}
+.bar .fill{height:100%;background:linear-gradient(90deg,#3B5CE0,#2F51D6);border-radius:99px}
+.cr{margin-top:auto;background:#E7F5EC;color:#1D6B3A;border-radius:18px;padding:18px 22px;font-size:24px;line-height:1.35}
+.cr b{font-size:30px}
+/* worked example */
+.grid2{display:grid;grid-template-columns:1.45fr 1fr;gap:28px;margin-top:34px;flex:1;min-height:0}
+table.w{border-collapse:collapse;width:100%;font-size:30px;font-variant-numeric:tabular-nums}
+table.w th{font-size:20px;color:#7A6F62;text-align:right;padding:6px 10px 8px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+table.w th:first-child{text-align:left}
+table.w td{padding:11px 10px;text-align:right;border-top:1px solid #EDE4D8}
+table.w td:first-child{text-align:left;font-weight:650}
+table.w td small{display:block;font-size:19px;color:#7A6F62;font-weight:400;margin-top:4px}
+table.w .op{color:#B4AA9C;font-weight:400}
+table.w tr.total td{border-top:3px solid #241F19;font-weight:800;font-size:32px}
+.big{display:flex;align-items:center;gap:26px;margin-top:18px;background:#241F19;color:#FFFCF7;border-radius:22px;padding:24px 30px}
+.big .n{font-size:84px;font-weight:800;letter-spacing:-.03em;line-height:1}
+.big span{font-size:25px;line-height:1.4;color:#E6DCCD}
+ul.why{list-style:none;font-size:26px;line-height:1.35}
+ul.why li{padding:11px 0 11px 40px;position:relative;border-bottom:1px solid #EDE4D8}
+ul.why li:last-child{border-bottom:0}
+ul.why li:before{content:"✓";position:absolute;left:0;top:13px;color:#2F51D6;font-weight:800}
+ul.why li small{display:block;font-size:19px;color:#7A6F62;margin-top:4px}
